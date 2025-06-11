@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
+import greeks
 from pricer import bs_price
-from greeks import delta, gamma
 from strategies import covered_call
 from backtest import backtest_strategy
 
@@ -22,7 +22,7 @@ price = bs_price(S, K, T, r, sigma, option_type)
 st.metric("Prix BS", f"{price:.2f}")
 st.write(f"Delta: {delta(S, K, T, r, sigma, option_type):.4f}")
 st.write(f"Gamma: {gamma(S, K, T, r, sigma):.4f}")
-#st.write(f"Rho: {rho(S, K, T, r, sigma, option_type):.4f}")
+st.write(f"Rho: {rho(S, K, T, r, sigma, option_type):.4f}")
 st.write(f"Theta: {theta(S, K, T, r, sigma, option_type):.4f}")
 st.write(f"vega: {vega(S, K, T, r, sigma):.4f}")
 
