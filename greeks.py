@@ -9,6 +9,9 @@ def gamma(S, K, T, r, sigma):
     d1 = (np.log(S/K) + (r + 0.5*sigma**2)*T) / (sigma*np.sqrt(T))
     return norm.pdf(d1) / (S * sigma * np.sqrt(T))
 
+N = norm.cdf
+n = norm.pdf
+
 def vega(S, K, T, r, sigma):
     
     if T <= 0: return 0.0 # Vega is zero at expiration
