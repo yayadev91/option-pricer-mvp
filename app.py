@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import greeks
+from greeks import delta, gamma, theta, rho, vega
 from pricer import bs_price
 from strategies import covered_call
 from backtest import backtest_strategy
